@@ -1,4 +1,12 @@
 - task: AzureWebApp@1
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Microsoft Azure(0cff93f3-2b71-4db6-80be-027c015a5df4)'
+    appType: 'webAppLinux'
+    appName: 'SampleLinuxWebApp'
+    deployToSlotOrASE: true
+    slotName: 'production'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
   inputs:
     azureSubscription: 'Microsoft Azure(0cff93f3-2b71-4db6-80be-027c015a5df4)'
     appType: 'webAppLinux'
