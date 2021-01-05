@@ -1,17 +1,13 @@
 # HTML
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Microsoft Azure(0cff93f3-2b71-4db6-80be-027c015a5df4)'
+    appType: 'webAppLinux'
+    appName: 'SampleLinuxWebApp'
+    deployToSlotOrASE: true
+    resourceGroupName: 'umeshvm_group'
+    slotName: 'production'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
 # Archive your static HTML project and save it with the build record.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
-
-trigger:
-- main
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(build.sourcesDirectory)'
-    includeRootFolder: false
-- task: PublishBuildArtifacts@1
