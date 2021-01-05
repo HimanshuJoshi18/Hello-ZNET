@@ -1,4 +1,3 @@
-# HTML
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'Microsoft Azure(0cff93f3-2b71-4db6-80be-027c015a5df4)'
